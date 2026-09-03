@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frisk &amp; Swing — Salsa, Bachata &amp; Zouk Studio in KL</title>
+<meta name="description" content="Beginner-friendly Salsa, Bachata and Zouk classes in Kuala Lumpur. Structured pathway, friendly community and a great atmosphere. Book your free trial class.">
+<link rel="canonical" href="https://friskandswing.com/">
+<link rel="icon" href="assets/images/favicon.ico">
+<meta property="og:title" content="Frisk &amp; Swing — Salsa, Bachata &amp; Zouk Studio in KL">
+<meta property="og:description" content="Beginner-friendly Salsa, Bachata and Zouk classes in KL. Book your free trial class.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://friskandswing.com/">
+<meta name="theme-color" content="#0b0b12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============== TOP BAR ============== -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#top" aria-label="Frisk & Swing home">
+      <img src="assets/images/logo_user.png" alt="" class="brand__mark" width="40" height="40">
+      <span class="brand__text">Frisk <em>&amp;</em> Swing</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#schedule">Schedule</a>
+      <a href="#beginner">Beginner</a>
+      <a href="#vibe">The Vibe</a>
+      <a href="#instructors">Instructors</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <a class="btn btn--primary btn--sm nav__cta" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial</a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="mobnav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobnav" class="mobnav" aria-label="Mobile">
+    <a href="#schedule">Schedule</a>
+    <a href="#beginner">Beginner pathway</a>
+    <a href="#vibe">The vibe</a>
+    <a href="#instructors">Instructors</a>
+    <a href="#contact">Visit us</a>
+    <a class="btn btn--primary" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero__bg" style="background-image:url('assets/images/hero-learn-to-dance.jpg')"></div>
+  <div class="hero__bg-blur" style="background-image:url('assets/images/hero-learn-to-dance.jpg')" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <p class="eyebrow">Kuala Lumpur · Beginner-friendly</p>
+    <h1 class="hero__title">
+      Learn <span class="grad">Salsa, Bachata<br>&amp; Zouk</span> in a room full of friends.
+    </h1>
+    <p class="hero__lede">
+      A warm, structured dance studio in KL where complete beginners walk in and walk out dancing.
+      No partner needed, no experience required.
+    </p>
+    <div class="hero__ctas">
+      <a class="btn btn--primary btn--lg" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial Class</a>
+      <a class="btn btn--ghost btn--lg" href="#schedule">See This Week's Schedule</a>
+    </div>
+    <ul class="hero__chips" role="list">
+      <li>✨ 10+ years teaching</li>
+      <li>🎓 Structured beginner pathway</li>
+      <li>🤝 Solo-friendly · rotate partners</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============== TRUST STRIP ============== -->
+<section class="trust">
+  <div class="wrap trust__inner">
+    <div class="trust__item"><strong>3 styles</strong><span>Salsa · Bachata · Zouk</span></div>
+    <div class="trust__item"><strong>6 nights</strong><span>Mon–Fri classes</span></div>
+    <div class="trust__item"><strong>3 studios</strong><span>Sprung floors · AC</span></div>
+    <div class="trust__item"><strong>100%</strong><span>Beginner pathway</span></div>
+  </div>
+</section>
+
+<!-- ============== SCHEDULE ============== -->
+<section class="section" id="schedule">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">This week</p>
+      <h2>Find your class</h2>
+      <p class="section__sub">Filter by style and level. Beginner classes are marked <span class="pill pill--beg">Beginner</span> — start with any of those.</p>
+    </header>
+
+    <div class="filterbar" role="tablist" aria-label="Filter by style">
+      <button class="chip is-active" data-filter="all" type="button" role="tab" aria-selected="true">All</button>
+      <button class="chip chip--salsa" data-filter="salsa" type="button" role="tab">Salsa</button>
+      <button class="chip chip--bachata" data-filter="bachata" type="button" role="tab">Bachata</button>
+      <button class="chip chip--zouk" data-filter="zouk" type="button" role="tab">Zouk</button>
+    </div>
+
+    <div class="schedule" id="scheduleGrid">
+      <!-- JS renders this -->
+    </div>
+
+    <p class="muted schedule__note">Schedule may change — confirm via Instagram DM before your visit.</p>
+  </div>
+</section>
+
+<!-- ============== BEGINNER PATHWAY ============== -->
+<section class="section section--alt" id="beginner">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Never danced before?</p>
+      <h2>Your first month, mapped out.</h2>
+      <p class="section__sub">A clear path from zero to social dancing. No awkwardness, no partner drama, no pressure.</p>
+    </header>
+
+    <ol class="path">
+      <li class="path__step">
+        <div class="path__num">01</div>
+        <h3>Free trial class</h3>
+        <p>Book online, walk in, dance for an hour. We'll pair you up and show you the basics. Wear comfy clothes, bring water.</p>
+        <span class="path__tag">60 min · solo ok</span>
+      </li>
+      <li class="path__step">
+        <div class="path__num">02</div>
+        <h3>Foundation 1 — first 4 weeks</h3>
+        <p>Master the core steps, lead/follow basics and one turn pattern. Two same-level classes per week keep it light.</p>
+        <span class="path__tag">Beginner</span>
+      </li>
+      <li class="path__step">
+        <div class="path__num">03</div>
+        <h3>Improver 1 — months 2-4</h3>
+        <p>Build combinations, musicality and styling. You can now hold a conversation while dancing. Mostly.</p>
+        <span class="path__tag">Improver</span>
+      </li>
+      <li class="path__step">
+        <div class="path__num">04</div>
+        <h3>Social night ready</h3>
+        <p>Join the studio's socials and practicas. Dance with the community, make friends, have a life outside the studio.</p>
+        <span class="path__tag">Socials</span>
+      </li>
+    </ol>
+
+    <div class="cta">
+      <h3>Ready for step one?</h3>
+      <a class="btn btn--primary btn--lg" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book your free trial</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== THE VIBE (atmosphere/community) ============== -->
+<section class="section" id="vibe">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">The vibe</p>
+      <h2>Why people stay.</h2>
+      <p class="section__sub">A studio built by dancers, for dancers. Real community, real progression, real fun.</p>
+    </header>
+
+    <div class="vibe">
+      <div class="vibe__media">
+        <img src="assets/images/hero-class.jpg" alt="Beginner dance class in session" loading="lazy">
+        <img class="vibe__media--alt" src="assets/images/gallery-02.jpg" alt="Studio social night" loading="lazy">
+      </div>
+      <ul class="vibe__points">
+        <li>
+          <h3>Beginner-first culture</h3>
+          <p>Every class is built so the newest person has a great time. Partner rotations are normal — you don't need to come with anyone.</p>
+        </li>
+        <li>
+          <h3>Real instructors, real care</h3>
+          <p>Mavis, Fai, Harry, Adela, Lawrence, Rachel and the team have taught hundreds of students. You'll know their names by week two.</p>
+        </li>
+        <li>
+          <h3>Atmosphere that pulls you back</h3>
+          <p>Warm lights, good music, friendly faces. The studio is the kind of place where Sunday nights turn into new friendships.</p>
+        </li>
+        <li>
+          <h3>Structured, not rigid</h3>
+          <p>Clear levels and a real pathway from total beginner to confident social dancer — without the pressure of a syllabus.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      <img src="assets/images/gallery-01.jpg" alt="Studio party" loading="lazy">
+      <img src="assets/images/gallery-02.jpg" alt="Class in session" loading="lazy">
+      <img src="assets/images/gallery-03.jpg" alt="Performance night" loading="lazy">
+      <img src="assets/images/gallery-04.jpg" alt="Group photo" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============== INSTRUCTORS ============== -->
+<section class="section section--alt" id="instructors">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">The team</p>
+      <h2>Instructors you'll actually know by name.</h2>
+    </header>
+
+    <div class="instructors">
+      <article class="inst">
+        <div class="inst__ava inst__ava--1" aria-hidden="true">MF</div>
+        <h3>Mavis &amp; Fai</h3>
+        <p class="inst__role">Founders · Salsa On-2 · Bachata</p>
+        <p>Bailamos Project Malaysia. Over a decade teaching together. The reason the studio exists.</p>
+      </article>
+      <article class="inst">
+        <div class="inst__ava inst__ava--2" aria-hidden="true">HA</div>
+        <h3>Harry A. &amp; Adela</h3>
+        <p class="inst__role">Bachata · Tech &amp; Improver</p>
+        <p>Patient with first-timers, sharp with the details. They'll get you social-dancing in a month.</p>
+      </article>
+      <article class="inst">
+        <div class="inst__ava inst__ava--3" aria-hidden="true">LR</div>
+        <h3>Lawrence &amp; Rachel</h3>
+        <p class="inst__role">Zouk · Improver &amp; Intermediate</p>
+        <p>Run the Zouk programme and the Wednesday social practica. Smooth, fun, technically sharp.</p>
+      </article>
+      <article class="inst">
+        <div class="inst__ava inst__ava--4" aria-hidden="true">KM</div>
+        <h3>Khalil &amp; Mavis</h3>
+        <p class="inst__role">Bachata Fusion · Collab</p>
+        <p>Wednesday-night Bachata Fusion classes. For when you're ready to play with the music.</p>
+      </article>
+      <article class="inst">
+        <div class="inst__ava inst__ava--5" aria-hidden="true">FS</div>
+        <h3>Fai &amp; Sabrine</h3>
+        <p class="inst__role">Salsa On-2 · Beginner &amp; Adv Beginner</p>
+        <p>The on-ramp most first-timers meet. Clear, kind, never boring.</p>
+      </article>
+      <article class="inst">
+        <div class="inst__ava inst__ava--6" aria-hidden="true">QQ</div>
+        <h3>Qiqi</h3>
+        <p class="inst__role">Bachata Intermediate 2</p>
+        <p>Friday nights. The class for when you're past the basics and ready to push.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== EVENTS ============== -->
+<section class="section" id="events">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Coming up</p>
+      <h2>Socials &amp; studio parties</h2>
+      <p class="section__sub">Themed nights, free taster classes, performances, live music. Open to the public.</p>
+    </header>
+    <div class="events">
+      <article class="event">
+        <img src="assets/images/event-free-salsa.jpg" alt="" loading="lazy">
+        <div class="event__body">
+          <p class="event__tag">Free taster</p>
+          <h3>Free Salsa On-2 Taster</h3>
+          <p>One hour to learn salsa. No partner, no experience. Walk in curious, walk out dancing.</p>
+        </div>
+      </article>
+      <article class="event">
+        <img src="assets/images/event-denim-zouk.jpg" alt="" loading="lazy">
+        <div class="event__body">
+          <p class="event__tag">Studio party</p>
+          <h3>Denim Zouk Studio Party</h3>
+          <p>Dress the theme. Free Zouk taster, performances and live Brazilian Zouk all night.</p>
+        </div>
+      </article>
+      <article class="event">
+        <img src="assets/images/event-halloween.jpg" alt="" loading="lazy">
+        <div class="event__body">
+          <p class="event__tag">Seasonal</p>
+          <h3>Halloween Studio Party</h3>
+          <p>Costume up. Free salsa taster, performances, and a dance floor that doesn't stop.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TEAMS ============== -->
+<section class="section section--alt" id="teams">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Performance teams</p>
+      <h2>For when you're ready to take the floor.</h2>
+      <p class="section__sub">The studio's working dance crews. Open to committed students who want to perform.</p>
+    </header>
+    <div class="teams">
+      <article class="team">
+        <img src="assets/images/teams-bailamos.jpg" alt="" loading="lazy">
+        <h3>Bailamos Project</h3>
+        <p>Founded and led by Mavis &amp; Fai for over a decade. The studio's flagship performance team.</p>
+      </article>
+      <article class="team">
+        <img src="assets/images/teams-bachata.jpg" alt="" loading="lazy">
+        <h3>Ministry of Bachata</h3>
+        <p>Perform to inspire. Share Bachata with the world — and refine the craft on every stage.</p>
+      </article>
+      <article class="team">
+        <img src="assets/images/teams-performance.jpg" alt="" loading="lazy">
+        <h3>Performance Squad</h3>
+        <p>By audition. The studio's training ground for committed dancers ready to take it further.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT ============== -->
+<section class="section section--contact" id="contact">
+  <div class="wrap contact">
+    <div class="contact__card">
+      <p class="eyebrow">Visit us</p>
+      <h2>Come dance with us.</h2>
+      <p>Free trial class. No partner. No experience. Just show up.</p>
+
+      <ul class="contact__list" role="list">
+        <li>
+          <span class="contact__label">Free trial</span>
+          <a class="contact__val contact__val--big" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book online →</a>
+        </li>
+        <li>
+          <span class="contact__label">WhatsApp</span>
+          <span class="contact__val">Add via Instagram DM</span>
+        </li>
+        <li>
+          <span class="contact__label">Instagram</span>
+          <a class="contact__val" href="https://www.instagram.com/frisknswing/" target="_blank" rel="noopener">@frisknswing</a>
+        </li>
+        <li>
+          <span class="contact__label">Facebook</span>
+          <a class="contact__val" href="https://www.facebook.com/friskandswing" target="_blank" rel="noopener">/friskandswing</a>
+        </li>
+        <li>
+          <span class="contact__label">Hours</span>
+          <span class="contact__val">Mon–Fri, 8:00 PM – 11:00 PM</span>
+        </li>
+      </ul>
+
+      <a class="btn btn--primary btn--lg contact__cta" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial</a>
+    </div>
+    <aside class="contact__note">
+      <p><strong>Heads up:</strong> Phone number, full address and Google Maps link aren't on the current site. The site above points to the live bit.ly trial form. Drop those into the live Notion / IG bio so we can wire them in here in the next pass.</p>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <img src="assets/images/logo_user.png" alt="" width="36" height="36">
+      <span>Frisk &amp; Swing Dance Studio · Kuala Lumpur</span>
+    </div>
+    <p class="footer__small">© <span id="yr"></span> Frisk &amp; Swing. Salsa, Bachata, Zouk. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="schedule.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
