@@ -35,7 +35,7 @@
       <a href="#instructors">Instructors</a>
       <a href="#contact">Visit</a>
     </nav>
-    <a class="btn btn--primary btn--sm nav__cta" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial</a>
+    <a class="btn btn--primary btn--sm nav__cta" href="#trial">Book a Free Trial</a>
     <button class="navtoggle" type="button" aria-expanded="false" aria-controls="mobnav" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -45,8 +45,8 @@
     <a href="#beginner">Beginner pathway</a>
     <a href="#vibe">The vibe</a>
     <a href="#instructors">Instructors</a>
-    <a href="#contact">Visit us</a>
-    <a class="btn btn--primary" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial</a>
+    <a href="#trial">Book trial</a>
+    <a class="btn btn--primary" href="#trial">Book a Free Trial</a>
   </nav>
 </header>
 
@@ -66,7 +66,7 @@
       No partner needed, no experience required.
     </p>
     <div class="hero__ctas">
-      <a class="btn btn--primary btn--lg" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial Class</a>
+      <a class="btn btn--primary btn--lg" href="#trial">Book a Free Trial Class</a>
       <a class="btn btn--ghost btn--lg" href="#schedule">See This Week's Schedule</a>
     </div>
     <ul class="hero__chips" role="list">
@@ -149,7 +149,7 @@
 
     <div class="cta">
       <h3>Ready for step one?</h3>
-      <a class="btn btn--primary btn--lg" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book your free trial</a>
+      <a class="btn btn--primary btn--lg" href="#trial">Book your free trial</a>
     </div>
   </div>
 </section>
@@ -305,6 +305,86 @@
   </div>
 </section>
 
+<!-- ============== TRIAL BOOKING FORM ============== -->
+<section class="section section--alt" id="trial">
+  <div class="wrap trial">
+    <div class="trial__intro">
+      <p class="eyebrow">Free trial class</p>
+      <h2>Save your spot.</h2>
+      <p class="section__sub">Drop your details and we'll WhatsApp you within 24 hours to confirm a class that fits your week. No partner, no experience needed.</p>
+      <ul class="trial__points" role="list">
+        <li><span class="trial__check">✓</span> 60-minute class</li>
+        <li><span class="trial__check">✓</span> Wear comfy clothes, bring water</li>
+        <li><span class="trial__check">✓</span> We rotate partners — come solo</li>
+        <li><span class="trial__check">✓</span> One WhatsApp follow-up, no spam</li>
+      </ul>
+    </div>
+
+    <form class="trial__form" id="trialForm" novalidate>
+      <!-- honeypot for bots; humans never see this -->
+      <div class="hp" aria-hidden="true">
+        <label>Leave this empty
+          <input type="text" name="company" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required autocomplete="name" maxlength="80" placeholder="e.g. Jamie Lim">
+      </div>
+
+      <div class="field">
+        <label for="whatsapp">WhatsApp number</label>
+        <input id="whatsapp" name="whatsapp" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+60 12 345 6789">
+        <small class="field__hint">Include country code — we'll only message you about this trial.</small>
+      </div>
+
+      <div class="field">
+        <label for="dance">Which style are you interested in?</label>
+        <select id="dance" name="dance" required>
+          <option value="" disabled selected>Pick one</option>
+          <option value="Salsa">Salsa</option>
+          <option value="Bachata">Bachata</option>
+          <option value="Zouk">Zouk</option>
+          <option value="Not sure yet">Not sure yet — surprise me</option>
+        </select>
+      </div>
+
+      <fieldset class="field field--inline">
+        <legend>Experience level <span class="opt">(optional)</span></legend>
+        <label class="radio"><input type="radio" name="experience" value="New to this"> <span>New to this</span></label>
+        <label class="radio"><input type="radio" name="experience" value="Some experience"> <span>Some experience</span></label>
+        <label class="radio"><input type="radio" name="experience" value="Returning dancer"> <span>Returning dancer</span></label>
+      </fieldset>
+
+      <div class="field">
+        <label for="day">Preferred day <span class="opt">(optional)</span></label>
+        <select id="day" name="day">
+          <option value="">Any day works</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Weekend">Weekend</option>
+        </select>
+      </div>
+
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>OK to message me on WhatsApp about my free trial class.</span>
+      </label>
+
+      <button class="btn btn--primary btn--lg trial__submit" type="submit" id="trialSubmit">
+        <span class="trial__submit-label">Book my free trial</span>
+        <span class="trial__spinner" aria-hidden="true"></span>
+      </button>
+
+      <p class="trial__msg" id="trialMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
 <!-- ============== CONTACT ============== -->
 <section class="section section--contact" id="contact">
   <div class="wrap contact">
@@ -316,7 +396,7 @@
       <ul class="contact__list" role="list">
         <li>
           <span class="contact__label">Free trial</span>
-          <a class="contact__val contact__val--big" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book online →</a>
+          <a class="contact__val contact__val--big" href="#trial">Register below →</a>
         </li>
         <li>
           <span class="contact__label">WhatsApp</span>
@@ -336,10 +416,10 @@
         </li>
       </ul>
 
-      <a class="btn btn--primary btn--lg contact__cta" href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener">Book a Free Trial</a>
+      <a class="btn btn--primary btn--lg contact__cta" href="#trial">Book a Free Trial</a>
     </div>
     <aside class="contact__note">
-      <p><strong>Heads up:</strong> Phone number, full address and Google Maps link aren't on the current site. The site above points to the live bit.ly trial form. Drop those into the live Notion / IG bio so we can wire them in here in the next pass.</p>
+      <p><strong>Heads up:</strong> Phone number and full address aren't on the current site. The trial form above is the new way to register. Once you share them, we can drop them into the contact card and the WhatsApp follow-up message.</p>
     </aside>
   </div>
 </section>
@@ -357,6 +437,7 @@
 </footer>
 
 <script src="schedule.js"></script>
+<script src="form.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
