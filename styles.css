@@ -216,12 +216,12 @@ p { margin: 0; }
 .inst p { color: var(--muted); font-size: 15.5px; }
 
 /* ============ REVIEWS ============ */
-.reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-bottom: 24px; }
+.reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-bottom: 24px; overflow: hidden; }
 .review {
   background: var(--ink-3); border: 1px solid var(--line); border-radius: var(--radius-lg);
   padding: 26px 24px 24px; display: flex; flex-direction: column; gap: 14px;
   position: relative; transition: transform .2s var(--ease), border-color .2s;
-  min-width: 0; box-sizing: border-box; width: 100%;
+  min-width: 0; box-sizing: border-box;
 }
 .review > * { min-width: 0; }
 .review:hover { transform: translateY(-3px); border-color: var(--line-2); }
