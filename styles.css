@@ -210,16 +210,10 @@ p { margin: 0; }
 
 /* ============ INSTRUCTORS ============ */
 .instructors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.inst { background: var(--ink-3); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px 24px; transition: transform .2s var(--ease), border-color .2s; }
+.inst { background: var(--ink-3); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 0 24px 28px; overflow: hidden; transition: transform .2s var(--ease), border-color .2s; }
 .inst:hover { transform: translateY(-3px); border-color: var(--line-2); }
-.inst__ava { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-family: 'Fraunces', serif; font-weight: 800; font-size: 22px; color: #0b0b12; margin-bottom: 18px; }
-.inst__ava--1 { background: var(--pink); color: #fff; }
-.inst__ava--2 { background: var(--cyan); }
-.inst__ava--3 { background: var(--grad); }
-.inst__ava--4 { background: #fff; }
-.inst__ava--5 { background: var(--cyan-2); }
-.inst__ava--6 { background: var(--pink-2); color: #fff; }
-.inst h3 { font-size: 19px; margin-bottom: 4px; }
+.inst__photo { width: calc(100% + 48px); height: 260px; object-fit: cover; object-position: center top; margin: 0 -24px 22px; background: #0b0b12; }
+.inst h3 { font-size: 21px; margin-bottom: 4px; }
 .inst__role { color: var(--cyan-2); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 12px; }
 .inst p { color: var(--muted); font-size: 14.5px; }
 
