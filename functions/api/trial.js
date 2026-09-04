@@ -202,8 +202,8 @@ export async function onRequestPost({ request, env }) {
   const rl = await rateLimit(env, ip);
   if (!rl.allowed) return bad("Too many submissions. Try again later.", 429, origin);
 
-  if (!env.GOOGLE_SERVICE_ACCOUNT_JSON) return bad("Server is not configured yet.", 503, origin);
-  if (!env.GOOGLE_SHEET_ID)              return bad("Server is not configured yet.", 503, origin);
+  if (!env.GOOGLE_SERVICE_ACCOUNT_JSON) return json({ ok: false, error: "Server is not configured yet.", detail: "GOOGLE_SERVICE_ACCOUNT_JSON missing" }, { status: 503, headers: allow(origin) });
+  if (!env.GOOGLE_SHEET_ID)              return json({ ok: false, error: "Server is not configured yet.", detail: "GOOGLE_SHEET_ID missing" }, { status: 503, headers: allow(origin) });
 
   let sa;
   try { sa = JSON.parse(env.GOOGLE_SERVICE_ACCOUNT_JSON); }
