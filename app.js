@@ -117,7 +117,7 @@
   function rowHTML(day) {
     const items = day.items.map(it => `
       <a class="cls" data-style="${it.style}" data-level="${it.level}"
-         href="https://bit.ly/iwantfreetrial" target="_blank" rel="noopener"
+         href="#trial?dance=${it.style}"
          aria-label="Book trial for ${it.name}">
         <div class="cls__time">${it.time} · Studio ${it.room}</div>
         <div class="cls__name">${it.name}</div>

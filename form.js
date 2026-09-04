@@ -16,6 +16,30 @@
   const btn   = document.getElementById("trialSubmit");
   const label = btn.querySelector(".trial__submit-label");
 
+  // Pre-select the dance from the URL hash (e.g. /#trial?dance=salsa).
+  // Accepts lowercase ("salsa") or title-case ("Salsa"); matches the form's option value.
+  function applyHashPreselect() {
+    const h = (location.hash || "").replace(/^#/, "");
+    const qIdx = h.indexOf("?");
+    if (qIdx === -1) return;
+    const params = new URLSearchParams(h.slice(qIdx + 1));
+    const d = (params.get("dance") || "").trim();
+    if (!d) return;
+    const sel = form.elements.dance;
+    if (!sel || !sel.options) return;
+    // Capitalise first letter to match option value, fall back to literal
+    const want = d.charAt(0).toUpperCase() + d.slice(1).toLowerCase();
+    for (const opt of sel.options) {
+      if (opt.value.toLowerCase() === d.toLowerCase() || opt.value === want) {
+        sel.value = opt.value;
+        sel.dispatchEvent(new Event("change"));
+        break;
+      }
+    }
+  }
+  applyHashPreselect();
+  window.addEventListener("hashchange", applyHashPreselect);
+
   function setMsg(text, kind) {
     msg.textContent = text;
     msg.dataset.kind = kind || "";

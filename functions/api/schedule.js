@@ -52,11 +52,11 @@ function rowsToSchedule(rows) {
     if (!byDay.has(day)) byDay.set(day, []);
     byDay.get(day).push({
       time:        time.trim(),
-      style:       genre.trim(),         // page does its own colour mapping; we just lowercase on the client
+      style:       genre.trim().toLowerCase(),   // lowercase so data-filter values match
       name:        name.trim(),
-      level:       (level || "all").trim(),
-      room:        (room || "").replace(/^Studio\s+/i, "").trim(),   // strip the prefix; the template prepends "Studio "
-      instructors: instructors.trim(),   // blank -> page shows TBA badge
+      level:       (level || "all").trim().toLowerCase(),
+      room:        (room || "").replace(/^Studio\s+/i, "").trim(),
+      instructors: instructors.trim(),
     });
   }
   // Sort days and items within each day by start time.
