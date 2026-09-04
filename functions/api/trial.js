@@ -195,7 +195,7 @@ export async function onRequestPost({ request, env }) {
   const row = [
     new Date().toISOString(),
     name.trim(),
-    whatsapp.trim(),
+    "'" + whatsapp.trim(),         // prefix apostrophe so Sheets treats it as text, not a formula
     dance,
     experience || "",
     day || "",
