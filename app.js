@@ -117,7 +117,7 @@
   function rowHTML(day) {
     const items = day.items.map(it => `
       <a class="cls" data-style="${it.style}" data-level="${it.level}"
-         href="#trial?dance=${it.style}"
+         href="#trial"
          aria-label="Book trial for ${it.name}">
         <div class="cls__time">${it.time} · Studio ${it.room}</div>
         <div class="cls__name">${it.name}</div>
@@ -135,6 +135,37 @@
       </div>
     `;
   }
+
+  // Intercept schedule class clicks: pre-select the dance on the trial
+  // form, then smooth-scroll to it. We preventDefault so the browser
+  // doesn't do a hard anchor jump.
+  grid.addEventListener("click", (e) => {
+    const a = e.target.closest("a.cls");
+    if (!a) return;
+    e.preventDefault();
+    const style = (a.dataset.style || "").toLowerCase();
+    const form = document.getElementById("trialForm");
+    const sel = form && form.elements.dance;
+    if (sel && style) {
+      const want = style.charAt(0).toUpperCase() + style.slice(1);
+      for (const opt of sel.options) {
+        if (opt.value.toLowerCase() === style) {
+          sel.value = opt.value;
+          break;
+        }
+      }
+      // Reflect in URL for shareability / back-button
+      history.replaceState(null, "", `#trial&dance=${encodeURIComponent(style)}`);
+    }
+    const target = document.getElementById("trial");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Focus the first empty input on the form (Name) so the user can type
+      setTimeout(() => {
+        if (form && form.elements.name) form.elements.name.focus({ preventScroll: true });
+      }, 700);
+    }
+  });
 
   function render(filter) {
     if (!DATA) return;
