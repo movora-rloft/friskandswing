@@ -221,7 +221,7 @@ p { margin: 0; }
   background: var(--ink-3); border: 1px solid var(--line); border-radius: var(--radius-lg);
   padding: 26px 24px 24px; display: flex; flex-direction: column; gap: 14px;
   position: relative; transition: transform .2s var(--ease), border-color .2s;
-  min-width: 0;   /* allow flex/grid children to shrink below content size */
+  min-width: 0; width: 100%; box-sizing: border-box;
 }
 .review > * { min-width: 0; }
 .review:hover { transform: translateY(-3px); border-color: var(--line-2); }
