@@ -134,29 +134,6 @@ async function ensureHeaderAndAppend(env, token, row) {
   const r1 = await fetch(readUrl, { headers: { authorization: `Bearer ${token}` } });
   const j1 = await r1.json();
   const hasHeader = (j1.values && j1.values[0] && j1.values[0].length) ? true : false;
-  const writes = [];
-  if (!hasHeader) writes.push({ range: "A1:I1", values: [HEADERS] });
-
-  // 2) Append the new row.
-  const appendUrl =
-    `https://sheets.googleapis.com/v4/spreadsheets/${env.GOOGLE_SHEET_ID}/values/A:J:append` +
-    `?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
-  writes.push({ range: "A1:J1", values: [row] });
-
-  const body = {
-    valueInputOption: "USER_ENTERED",
-    insertDataOption: "INSERT_ROWS",
-    requests: writes.map((w) => ({
-      appendCells: {
-        sheetId: 0,
-        rows: w.values.length,
-        columns: w.values[0].length,
-        values: w.values,
-      },
-    })),
-  };
-  // Simpler path: use the values.append endpoint for the data row; the
-  // header we wrote with a one-shot update if needed.
   if (!hasHeader) {
     const u1 = `https://sheets.googleapis.com/v4/spreadsheets/${env.GOOGLE_SHEET_ID}/values/A1:I1?valueInputOption=USER_ENTERED`;
     const r2 = await fetch(u1, {
@@ -166,10 +143,16 @@ async function ensureHeaderAndAppend(env, token, row) {
     });
     if (!r2.ok) throw new Error(`header write ${r2.status}: ${await r2.text()}`);
   }
+  // 2) Append via the values.append endpoint. Pass the full range A1:I1
+  //    so the API knows which sheet/columns to use; the API ignores the
+  //    row index and inserts after the last non-empty row.
+  const appendUrl =
+    `https://sheets.googleapis.com/v4/spreadsheets/${env.GOOGLE_SHEET_ID}/values/A1:I1:append` +
+    `?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
   const r3 = await fetch(appendUrl, {
     method: "POST",
     headers: { authorization: `Bearer ${token}`, "content-type": "application/json" },
-    body: JSON.stringify({ range: "A1:J1", majorDimension: "ROWS", values: [row] }),
+    body: JSON.stringify({ range: "A1:I1", majorDimension: "ROWS", values: [row] }),
   });
   if (!r3.ok) throw new Error(`append ${r3.status}: ${await r3.text()}`);
   return await r3.json();
