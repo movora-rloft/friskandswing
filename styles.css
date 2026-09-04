@@ -234,6 +234,24 @@ p { margin: 0; }
 .team h3 { padding: 22px 22px 6px; font-size: 21px; }
 .team p { padding: 0 22px 26px; color: var(--muted); font-size: 15px; }
 
+/* ============ FIND US (MAP) ============ */
+.map { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; align-items: stretch; }
+.map__frame {
+  width: 100%; height: 460px; border: 0; border-radius: var(--radius-lg);
+  background: var(--ink-2);
+  box-shadow: var(--shadow-lg);
+}
+.map__card {
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.map__card h3 { font-size: 22px; }
+.map__card p { color: var(--muted); font-size: 15px; line-height: 1.55; }
+.map__card .btn { width: 100%; justify-content: center; }
+
 /* ============ SPACE RENTAL ============ */
 .rental { display: flex; flex-direction: column; gap: 18px; margin-bottom: 48px; }
 .rental__card {
@@ -395,6 +413,8 @@ p { margin: 0; }
   .rental__body { padding: 0 6px 6px; }
   .rental__cta { flex-direction: column; align-items: flex-start; padding: 24px 22px; }
   .rental__cta .btn { width: 100%; justify-content: center; }
+  .map { grid-template-columns: 1fr; }
+  .map__frame { height: 360px; }
 }
 @media (max-width: 560px) {
   .path { grid-template-columns: 1fr; }
