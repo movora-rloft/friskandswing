@@ -219,6 +219,29 @@ p { margin: 0; }
 
 /* ============ EVENTS / TEAMS ============ */
 .events { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.events--nocards .event { gap: 10px; padding: 28px 26px 32px; }
+.event--plain {
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative;
+  transition: transform .2s var(--ease), border-color .2s;
+}
+.event--plain:hover { transform: translateY(-3px); border-color: var(--line-2); }
+.event--plain::before {
+  content: ""; position: absolute; left: 0; top: 24px; bottom: 24px; width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: var(--grad);
+}
+.event__kicker {
+  font-size: 11.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan-2);
+  margin-bottom: 4px;
+}
+.event--plain h3 { font-size: 22px; line-height: 1.25; }
+.event--plain p { color: var(--muted); font-size: 15px; line-height: 1.55; }
 .event { background: var(--ink-3); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; transition: transform .2s var(--ease), border-color .2s; }
 .event:hover { transform: translateY(-3px); border-color: var(--line-2); }
 .event img { width: 100%; height: 220px; object-fit: cover; }
