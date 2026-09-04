@@ -143,12 +143,13 @@ async function ensureHeaderAndAppend(env, token, row) {
     });
     if (!r2.ok) throw new Error(`header write ${r2.status}: ${await r2.text()}`);
   }
-  // 2) Append via the values.append endpoint. Pass the full range A1:I1
-  //    so the API knows which sheet/columns to use; the API ignores the
-  //    row index and inserts after the last non-empty row.
+  // valueInputOption=RAW stores the value as text without re-evaluating it.
+  // Under USER_ENTERED, a leading '+' is interpreted as a formula prefix and
+  // the cell shows #ERROR! even when the value is a phone number. Storing
+  // the number as-is via RAW keeps it as text and displays it cleanly.
   const appendUrl =
     `https://sheets.googleapis.com/v4/spreadsheets/${env.GOOGLE_SHEET_ID}/values/A1:I1:append` +
-    `?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+    `?valueInputOption=RAW&insertDataOption=INSERT_ROWS`;
   const r3 = await fetch(appendUrl, {
     method: "POST",
     headers: { authorization: `Bearer ${token}`, "content-type": "application/json" },
@@ -195,7 +196,7 @@ export async function onRequestPost({ request, env }) {
   const row = [
     new Date().toISOString(),
     name.trim(),
-    "'" + whatsapp.trim(),         // prefix apostrophe so Sheets treats it as text, not a formula
+    whatsapp.trim(),               // stored as text via RAW input option (no apostrophe needed)
     dance,
     experience || "",
     day || "",
